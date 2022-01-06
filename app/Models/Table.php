@@ -9,5 +9,5 @@ class Table extends Model
 {
     use TenantTrait;
 
-    protected $fillable = ['identify', 'description', 'tenant_id'];
+    protected $fillable = ['identify', 'uuid', 'description', 'tenant_id'];
 }

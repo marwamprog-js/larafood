@@ -33,7 +33,7 @@ class TableRepository implements TableRepositoryInterface
   public function getTableByUuid(string $uuid)
   {
     return DB::table($this->table)
-      ->where('identify', $uuid)
+      ->where('uuid', $uuid)
       ->first();
   }
 }

@@ -11,7 +11,7 @@ class Category extends Model
 
     use TenantTrait;
 
-    protected $fillable = ['name', 'url', 'description', 'tenant_id'];
+    protected $fillable = ['name', 'url', 'description', 'uuid', 'tenant_id'];
 
     public function products()
     {
