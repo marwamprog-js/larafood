@@ -29,6 +29,14 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
+        /**
+         * Ao criar as migrations no caso de testes, verifica
+         * se esta rodando pelo console.
+         * Se estiver, da um return e não deixa ler o código
+         * 
+         */
+        if ($this->app->runningInConsole()) return;
+
         $permissions = Permission::all();
 
         foreach ($permissions as $permission) {
