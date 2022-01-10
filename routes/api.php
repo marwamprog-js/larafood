@@ -11,7 +11,7 @@ Route::group([
 
   Route::post('/auth/v1/orders/{identifyOrder}/evaluations', 'Api\EvaluationApiController@store');
 
-  Route::post('/auth/v1/my-orders', 'Api\OrderApiController@myOrders');
+  Route::get('/auth/v1/my-orders', 'Api\OrderApiController@myOrders');
   Route::post('/auth/v1/orders', 'Api\OrderApiController@store');
 });
 
@@ -32,5 +32,12 @@ Route::group([
   Route::get('/products', 'ProductApiController@productsByTenant');
 
   Route::post('/orders', 'OrderApiController@store');
-  Route::post('/orders/{identify}', 'OrderApiController@show');
+  Route::get('/orders/{identify}', 'OrderApiController@show');
+});
+
+/**
+ * Test API
+ */
+Route::get('/', function () {
+  return response()->json(['message' => 'ok']);
 });
